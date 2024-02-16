@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import styles from "./index.module.css";
 
 function AddTodo() {
@@ -8,9 +8,14 @@ function AddTodo() {
     function collectInput(event) {
         todo = event.target.value;
     }
-
-    function saveTodo() {
-        console.log(todo);
+    function saveTodo(event) {
+        //Get existing list of todos
+        let todos = JSON.parse(localStorage.getItem("TODO_KEY")) || [];
+        //add new todo to existing list of todos
+        todos.push(todo);
+        //Set all todos in local storage
+        localStorage.setItem("TODO_KEY", JSON.stringify(todos));
+        console.log(todos); 
     }
 
 
