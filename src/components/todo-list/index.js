@@ -1,5 +1,7 @@
 import {useState,useEffect} from "react"
 import {useLocalStorage} from "usehooks-ts"
+import TodoItem from "../todo-item";
+
 function TodoList() {
     // let todos = [];
     const [todos, setTodos] = useLocalStorage("TODO_KEY",[]);
@@ -16,19 +18,7 @@ function TodoList() {
     return (
         <ul className="list-group">
             {todos.map(function(todo , index){
-                return (
-                <li className="list-group-item" key={index}>
-                     <input 
-                        className="form-check-input me-1"
-                        type="checkbox" 
-                        value="" 
-                        id={index}/>
-                    <label 
-                    className="form-check-label" 
-                    for={index}
-                    >{todo}</label>
-                </li>
-                );
+                return <TodoList todo={todo} index={index} />;
             })}
 
         </ul>
