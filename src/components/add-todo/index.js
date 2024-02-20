@@ -13,6 +13,7 @@ function AddTodo() {
                 className={styles.addTodoInput}
                 placeholder="Start typing..." />
             <button 
+            className={`btn btn-success ${styles.btn}`}
             onClick={() => setTodos([...todos,todo])}
             >Create</button>
         </section>

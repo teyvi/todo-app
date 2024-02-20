@@ -17,3 +17,7 @@
 .addTodoInput:focus {
     border: none;
 }
+
+.btn{
+    background-color: black;
+}
