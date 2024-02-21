@@ -11,6 +11,9 @@
                     className="form-check-label" 
                     for={index}
                     >{todo}</label>
+                    <button className="btn btn-danger">
+                        Delete
+                    </button>
                 </li>
             );
 
