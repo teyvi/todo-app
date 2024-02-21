@@ -9,6 +9,7 @@ function AddTodo() {
     return (
         <section className={styles.addTodo}>
             <input
+                onKeyPress={event => event.charCode == 13 && setTodos([...todos,todo])}
                 onChange={event => setTodo(event.target.value)}
                 className={styles.addTodoInput}
                 placeholder="Start typing..." />
